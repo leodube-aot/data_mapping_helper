@@ -19,8 +19,8 @@ class EventTable:
         """Prints the mapping"""
         print("EVENT_IDs used to build mapping:")
         print(self.event_ids, end="\n\n")
-        print("MAPPING:")
-        print(f"EVENT ({len(self.event_ids)} entries) <==")
+        print(f"MAPPING (depth {MAX_MAPPING_DEPTH}):")
+        print(f"EVENT ({len(self.event_ids)} entries)")
         for child_table in self.child_tables:
             child_table.print()
 
@@ -83,7 +83,7 @@ class ChildTable:
         """Prints the mapping"""
         pad = "\t" * self.depth
         print(
-            f"{pad}{self.table_name} ({self.num_rows} entries) on {self.fk_column_to_parent} {"==>" if self.depth != MAX_MAPPING_DEPTH else ""}"
+            f"{pad}{self.table_name} ({self.num_rows} entries) on {self.fk_column_to_parent}"
         )
         if VERBOSE and self.table_name != "EVENT":
             print(indent(pformat(self.rows, compact=True), pad))

@@ -12,6 +12,17 @@ This script works by:
 
 Notes:
 - The SQL query I use on step 4 isn't perfect. It makes the assumption that the fk column name and pk column name are the same. You'll see log entries that say certain columns cannot be found for a specific. For now, you can just check whether any of these tables might contain useful migration data manually.
+```
+// Example debug log entries:
+
+// This one happens since CORP_NAME has START_EVENT_ID and END_EVENT_ID, but not EVENT_ID. 
+// The EVENT_ID debug logs aren't really an issue since it refers back to the root event table.
+Could not find column EVENT_ID in table CORP_NAME.
+
+// This means that PARTY_TYP_CD refers to another table, but none of the entries relating to
+// the filing type have a value (ie. only null values), so we can ignore this fk.
+Only NULL values for PARTY_TYP_CD in table FILING_USER.
+```
 
 ### Usage
 
