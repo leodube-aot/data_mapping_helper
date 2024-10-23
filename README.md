@@ -34,3 +34,14 @@ Only NULL values for PARTY_TYP_CD in table FILING_USER.
 - `models.VERBOSE`: If True, will print the rows associated with each child table mapping. Can be useful for debugging, or further digging.
 - `models.MAX_MAPPING_DEPTH`: The mapping recursion depth level. I find that 2 is mostly ideal. Any more and you start getting recursive loops. The reason you might want to increase this is that some tables rely on other tables, and capturing this in the mapping output might be beneficial.
 
+
+### Screenshots
+<img src="screenshots/Screenshot%201.png" alt="drawing" width="600"/>
+
+---
+
+<img src="screenshots/Screenshot%202.png" alt="drawing" width="900"/>
+
+---
+
+<img src="screenshots/Screenshot%203.png" alt="drawing" width="600"/>
