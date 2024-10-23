@@ -45,7 +45,7 @@ class EventTable:
             table_name="EVENT",
         )
 
-        # Only get tables that have fk values in filing_ids_with_typ_cd
+        # Only get tables that have fk values in the filing event_ids
         for table_name, column_name in cursor.fetchall():
             stmt = (
                 f"SELECT * FROM {table_name} WHERE {column_name} IN ("
